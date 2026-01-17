@@ -1,0 +1,7 @@
+{
+	"devDependencies": {
+		"@skeletonlabs/skeleton": "^4.10.0",
+		"@skeletonlabs/skeleton-svelte": "^4.10.0",
+		"phosphor-svelte": "^3.0.1"
+	}
+}

@@ -1,0 +1,44 @@
+services:
+  nimbledb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GITHUB_REPO: kelvinwambua/nimbledb
+        GITHUB_BRANCH: main
+    ports:
+      - "7000:7000"
+    volumes:
+      - nimbledb-data:/data
+    environment:
+      - DATA_DIR=/data
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env # Load from .env file
+    environment:
+      # Override DB_ADDR for Docker networking
+      - DB_ADDR=nimbledb:7000
+      - NIMBLEDB_HOST=nimbledb
+      - NIMBLEDB_PORT=7000
+    depends_on:
+      - nimbledb
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  nimbledb-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

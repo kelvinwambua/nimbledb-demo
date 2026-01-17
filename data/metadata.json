@@ -1,0 +1,124 @@
+[
+  {
+    "name": "users",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": true,
+        "is_primary": true,
+        "is_unique": false
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR",
+        "max_len": 255,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "password",
+        "type": "VARCHAR",
+        "max_len": 255,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "name",
+        "type": "VARCHAR",
+        "max_len": 255,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "image",
+        "type": "VARCHAR",
+        "max_len": 500,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "role",
+        "type": "VARCHAR",
+        "max_len": 50,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "created_at",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      }
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "unique_keys": null
+  },
+  {
+    "name": "posts",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": true,
+        "is_primary": true,
+        "is_unique": false
+      },
+      {
+        "name": "user_id",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": true,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "title",
+        "type": "VARCHAR",
+        "max_len": 255,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "content",
+        "type": "VARCHAR",
+        "max_len": 5000,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "created_at",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      },
+      {
+        "name": "updated_at",
+        "type": "INT",
+        "max_len": 0,
+        "not_null": false,
+        "is_primary": false,
+        "is_unique": false
+      }
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "unique_keys": null
+  }
+]
