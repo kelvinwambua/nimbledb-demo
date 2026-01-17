@@ -89,7 +89,7 @@ func (h *AuthHandler) Register(c *fiber.Ctx) error {
 		Path:     "/",
 		HTTPOnly: true,
 		Secure:   os.Getenv("IS_PROD") == "true",
-		SameSite: "Lax",
+		SameSite: "None",
 		Expires:  time.Now().Add(24 * time.Hour),
 	})
 
@@ -135,7 +135,7 @@ func (h *AuthHandler) Login(c *fiber.Ctx) error {
 		Path:     "/",
 		HTTPOnly: true,
 		Secure:   os.Getenv("IS_PROD") == "true",
-		SameSite: "Lax",
+		SameSite: "None",
 		Expires:  time.Now().Add(24 * time.Hour),
 	})
 
